@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Thanks to Vanilla Vehicles Expanded for the tank template -->
+<Defs>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>Bullet_Colossus</defName>
+		<label>Colossus Railgun Slug</label>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<damageAmountBase>80</damageAmountBase>
+			<armorPenetrationBase>10</armorPenetrationBase>
+			<stoppingPower>50</stoppingPower>
+			<speed>450</speed>
+		</projectile>
+		<thingClass>VFECore.GaussProjectile</thingClass>
+		<graphicData>
+			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
+			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+			<color>(255,0,255)</color>
+		</graphicData>
+		<reachMaxRangeAlways>false</reachMaxRangeAlways>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>100</lifeTimeDuration>
+		<minDistanceToAffect>8.0</minDistanceToAffect>
+		<widthScaleFactor>0.10</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0,0,-1)</startingPositionOffset>
+		<totalSizeScale>0.8</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>2</finalTickFrameRate>
+		<tickDamageRate>5</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<stopWhenHit>false</stopWhenHit>
+		<stopWhenHitAt>
+			<li>MineableSteel</li>
+			<li>CollapsedRocks</li>
+			<li>MineableSilver</li>
+			<li>MineableGold</li>
+			<li>MineableUranium</li>
+			<li>MineablePlasteel</li>
+			<li>MineableJade</li>
+			<li>MineableComponentsIndustrial</li>
+			<li>RaisedRocks</li>
+			<li>Sandstone</li>
+			<li>SmoothedSandstone</li>
+			<li>Granite</li>
+			<li>SmoothedGranite</li>
+			<li>Limestone</li>
+			<li>SmoothedLimestone</li>
+			<li>Slate</li>
+			<li>SmoothedSlate</li>
+			<li>Marble</li>
+			<li>SmoothedMarble</li>
+		</stopWhenHitAt>
+	</VFECore.ExpandableProjectileDef>
+
+	<Vehicles.VehicleTurretDef Name="ColossusMainTurret" ParentName="TurretBase">
+		<defName>Colossus_MainTurret</defName>
+		<label>Colossus Turret</label>
+		<turretType>Rotatable</turretType>
+		<shotSound>PSV_ColossusCannonSound</shotSound>
+		<reloadSound>Standard_Reload</reloadSound>
+		
+		<projectile>Bullet_Colossus</projectile>
+		<reloadTimer>5.8</reloadTimer>
+		<warmUpTimer>1.2</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>1.2</rotationSpeed>
+		
+		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
+		<projectileOffset>2.5</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>45.9</maxRange>
+		<minRange>8</minRange>
+		
+		<attachProjectileFlag>PSV_Tank</attachProjectileFlag>
+		
+		<recoil>
+			<distanceTotal>0.45</distanceTotal>
+			<distancePerTick>0.15</distancePerTick>
+			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<vehicleRecoil>
+			<distanceTotal>0.1</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
+		</vehicleRecoil>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenBursts>1</ticksBetweenBursts>
+				<spreadRadius>2</spreadRadius>
+				<label>Single Shot</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Colossus/Colossus_CannonTop</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(4, 4)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Uranium</li>
+			</thingDefs>
+		</ammunition>
+		
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	
+	<Vehicles.VehicleTurretDef ParentName="TurretBase">
+		<defName>Colossus_PDTurret</defName>
+		<label>Poit Defense Turret</label>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>GunShotA</shotSound>
+		
+		<projectile>Bullet_MiniTurret</projectile>
+		<reloadTimer>2.4</reloadTimer>
+		<warmUpTimer>1.2</warmUpTimer>
+		
+		<magazineCapacity>75</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		<hitFlags>IntendedTarget</hitFlags>
+		
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>2.2</rotationSpeed>
+		
+		<projectileOffset>2.1</projectileOffset>
+		<projectileShifting>
+			<li>0.2</li>
+			<li>-0.2</li>
+		</projectileShifting>
+		
+		<minRange>1</minRange>
+		<maxRange>28.9</maxRange>
+		
+		<recoil>
+			<distanceTotal>0.15</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.1</speedMultiplierPostRecoil>
+		</recoil>
+		
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>4</shotsPerBurst>
+				<ticksBetweenShots>6</ticksBetweenShots>
+				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+		</fireModes>
+
+		<graphicData>
+			<texPath>Things/Building/Security/TurretMini_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(3, 3)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>
