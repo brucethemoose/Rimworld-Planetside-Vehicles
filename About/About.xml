@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Planetside Vehicles</name>
+	<packageId>brucethemoose.spandexvehicles</packageId>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<author>brucethemoose</author>
+	<url>https://github.com/brucethemoose/Rimworld-Planetside-Vehicles</url>
+	<loadAfter>
+		<li>smashphil.vehicleframework</li>
+	</loadAfter>
+	<description>Militarized, vanilla friendly vehicles inspired by Planetside.</description>
+</ModMetaData>

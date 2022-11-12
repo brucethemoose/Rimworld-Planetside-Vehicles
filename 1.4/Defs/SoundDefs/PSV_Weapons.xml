@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>PSV_ColossusCooldownSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_02</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_03</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_ColossusMiss</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Flyby</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_ColossusCharge</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Charge</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+  <SoundDef>
+    <defName>PSV_ColossusCannonSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_02</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_03</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_04</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_05</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Shoot_06</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>100~100</volumeRange>
+      </li>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_02</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Cooldown_03</clipPath>
+          </li>
+        </grains>
+        <volumeRange>1~30</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+</Defs>

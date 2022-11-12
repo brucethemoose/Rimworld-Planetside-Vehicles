@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Thanks to Vanilla Vehicles Expanded for the drop pod template -->
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>PSV_Reaver_Blueprint</defName>
+		<label>Reaver</label>
+		<description>Dubbed a "Flying Brick" by enemies and allies alike, the New Conglomerate Reaver is as crude as it is effective. Oversized engines more than compensate for the chunky airframe and the equally oversized, fully automatic shotgun bolted to it. /n/n Being a New Conglomerate design, heavy use of mechanites makes construction of this spacer-tech jumpjet relatively easy. It is capable of taking off without a runaway.</description>
+		<designationCategory>PSV_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Reaver/Reaver</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+		</graphicData>
+		
+		<rotatable>false</rotatable>
+
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		
+		<size>(2,2)</size>
+		
+		<researchPrerequisites>
+			<li>PSV_Nanites</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<Steel>30</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>PSV_Reaver</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--Thanks to Vanilla Vehicles Expanded for the tank template -->
+<Defs>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable">
+		<defName>PSV_Colossus_Blueprint</defName>
+		<label>Colossus</label>
+		<description>An ultratech artillery platform, the Colossus is Nanite System's response to heavily armored carrier platforms. The main canon can pierce through meters of armor, while the high-capcity shield can absorb huge amounts of incoming fire until it is depleted. 
+
+			Heavy use of Mechanites make this complex design relatively easy to construct.</description>
+		<designationCategory>PSV_Vehicles</designationCategory>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/Colossus/Colossus</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(4,4)</drawSize>
+			<color>(150, 10, 0)</color>
+			<colorTwo>(30, 50, 80)</colorTwo>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Flammability>0.01</Flammability>
+		</statBases>
+		
+		<size>(3,3)</size>
+		
+		<researchPrerequisites>
+			<li>PSV_MoreNanites</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<Steel>320</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<thingToSpawn>PSV_Colossus</thingToSpawn>
+	</Vehicles.VehicleBuildDef>
+</Defs>
