@@ -3,10 +3,10 @@
 <Defs>
 	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>Bullet_Colossus</defName>
-		<label>Colossus Railgun Slug</label>
+		<label>Railgun Slug</label>
 		<projectile>
-			<damageDef>Bullet</damageDef>
-			<damageAmountBase>80</damageAmountBase>
+			<damageDef>PSV_ColossusDamage</damageDef>
+			<damageAmountBase>300</damageAmountBase>
 			<armorPenetrationBase>10</armorPenetrationBase>
 			<stoppingPower>50</stoppingPower>
 			<speed>450</speed>

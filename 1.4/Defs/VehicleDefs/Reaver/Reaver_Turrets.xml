@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Thanks to Vanilla Vehicles Expanded for the tank template -->
+<Defs>
+	
+	<Vehicles.VehicleTurretDef Name="ReaverShotgun" ParentName="TurretBase">
+		<defName>Reaver_Shotgun</defName>
+		<label>M30 Air Hammer</label>
+		<turretType>Rotatable</turretType>
+		<shotSound>PSV_AirHammerSound</shotSound>
+		<reloadSound>Standard_Reload</reloadSound>
+		
+		<projectile>Bullet_Shotgun</projectile>
+		<reloadTimer>4.8</reloadTimer>
+		<warmUpTimer>0.2</warmUpTimer>
+		<magazineCapacity>14</magazineCapacity>
+		<chargePerAmmoCount>1</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+
+		
+		<autoSnapTargeting>true</autoSnapTargeting>
+		<rotationSpeed>20</rotationSpeed>
+		
+		<projectileOffset>2.5</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>20.0</maxRange>
+		<minRange>0</minRange>
+		
+		
+		<vehicleRecoil>
+			<distanceTotal>0.0</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
+		</vehicleRecoil>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>2</shotsPerBurst>
+				<ticksBetweenShots>0</ticksBetweenShots>
+				<ticksBetweenBursts>30</ticksBetweenBursts>
+				<spreadRadius>2</spreadRadius>
+				<label>Full Auto</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+		
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+
+	
+	<Vehicles.VehicleTurretDef ParentName="TurretBase">
+		<defName>Reaver_Rockets</defName>
+		<label>Breaker Missile Pods</label>
+		
+		<turretType>Static</turretType>
+		<shotSound>Jumpjet_Rocket_Sound</shotSound>
+		
+		<projectile>Bullet_ESFRocket</projectile>
+		<reloadTimer>15.0</reloadTimer>
+		<warmUpTimer>1.0</warmUpTimer>
+		
+		<magazineCapacity>24</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		
+		
+
+		<projectileOffset>0.1</projectileOffset>
+		<projectileShifting>
+			<li>0.2</li>
+			<li>-0.2</li>
+		</projectileShifting>
+		
+		<minRange>8</minRange>
+		<maxRange>35</maxRange>
+
+		<fireModes>
+			<li>
+				<shotsPerBurst>12</shotsPerBurst>
+				<ticksBetweenShots>20</ticksBetweenShots>
+				<ticksBetweenBursts>360</ticksBetweenBursts>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>60</ticksBetweenShots>
+				<ticksBetweenBursts>80</ticksBetweenBursts>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<ammunition>
+			<thingDefs>
+				<li>Shell_HighExplosive</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>

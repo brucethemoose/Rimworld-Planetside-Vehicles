@@ -31,6 +31,7 @@
             <clipPath>Colossus_Flyby</clipPath>
           </li>
         </grains>
+        <volumeRange>200~200</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -53,7 +54,7 @@
   <SoundDef>
     <defName>PSV_ColossusCannonSound</defName>  
     <context>MapOnly</context>  
-    <maxSimultaneous>1</maxSimultaneous>  
+    <maxSimultaneous>2</maxSimultaneous>  
     <subSounds>
       <li>
         <grains>
@@ -92,7 +93,63 @@
         </grains>
         <volumeRange>1~30</volumeRange>
       </li>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Flyby</clipPath>
+          </li>
+        </grains>
+        <volumeRange>50~100</volumeRange>
+      </li>
     </subSounds>
   </SoundDef>
-  
+  <SoundDef>
+    <defName>PSV_JumpjetRocketSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>5</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ESF_Rocket_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ESF_Rocket_02</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ESF_Rocket_03</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ESF_Rocket_04</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>ESF_Rocket_05</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_AirHammerSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>2</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Airhammer_Shoot_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Airhammer_Shoot_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Airhammer_Shoot_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Airhammer_Shoot_01</clipPath>
+          </li>
+        </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

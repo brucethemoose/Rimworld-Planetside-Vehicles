@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--Thanks to Vanilla Vehicles Expanded for the drop pod template -->
 <Defs>
-	<Vehicles.VehicleDef ParentName="VehiclePawn_Mechanical">
+	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
 		<defName>PSV_Reaver</defName>
 		<label>Reaver</label>
 		<description>Dubbed a "Flying Brick" by enemies and allies alike, the New Conglomerate Reaver is as crude as it is effective. Oversized engines more than compensate for the chunky airframe and the equally oversized, fully automatic shotgun bolted to it. /n/n Being a New Conglomerate design, heavy use of mechanites makes construction of this spacer-tech jumpjet relatively easy. It is capable of taking off without a runaway.</description>
@@ -31,7 +31,7 @@
 		
 		<statBases>
 			<ArmorRating_Blunt>0.34</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.68</ArmorRating_Sharp>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
 			<Flammability>0.5</Flammability>
 			<MarketValue>3000</MarketValue>
 		</statBases>
@@ -71,10 +71,9 @@
 		
 		<components>
 			<li>
-				<key>Body</key>
-				<label>Body</label>
-				<health>400</health>
-				<armor>1.75</armor>
+				<key>Chassis</key>
+				<label>Chassis</label>
+				<health>600</health>
 				
 				<hitbox>
 					<side>Body</side>
@@ -87,8 +86,7 @@
 			<li>
 				<key>Engine</key>
 				<label>Engine</label>
-				<health>30</health>
-				<armor>0.15</armor>
+				<health>100</health>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
@@ -101,7 +99,7 @@
 				</reactors>
 				
 				<hitbox>
-					<side>Body</side>
+					<side>Back</side>
 				</hitbox>
 				
 				<categories>
@@ -111,13 +109,12 @@
 				</categories>
 			</li>
 			<li>
-				<key>FirstThruster</key>
-				<label>First Thruster</label>
+				<key>LeftThruster</key>
+				<label>Left Thruster</label>
 				<health>30</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
-					<side>Body</side>
+					<side>Left</side>
 				</hitbox>
 				
 				<categories>
@@ -127,13 +124,12 @@
 				</categories>
 			</li>
 			<li>
-				<key>SecondThruster</key>
-				<label>Second Thruster</label>
+				<key>RightThruster</key>
+				<label>Right Thruster</label>
 				<health>30</health>
-				<armor>0.15</armor>
-				
+
 				<hitbox>
-					<side>Body</side>
+					<side>Right</side>
 				</hitbox>
 				
 				<categories>
@@ -143,25 +139,9 @@
 				</categories>
 			</li>
 			<li>
-				<key>ThirdThruster</key>
-				<label>Third Thruster</label>
-				<health>30</health>
-				<armor>0.15</armor>
-				
-				<hitbox>
-					<side>Body</side>
-				</hitbox>
-				
-				<categories>
-					<li>MoveSpeed</li>
-					<li>FlightControl</li>
-					<li>FlightSpeed</li>
-				</categories>
-			</li><li>
 				<key>Stabilizers</key>
 				<label>Stabilizers</label>
 				<health>20</health>
-				<armor>0.15</armor>
 				
 				<hitbox>
 					<side>Body</side>
@@ -179,20 +159,16 @@
 			
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
-				<fuelConsumptionRate>360</fuelConsumptionRate>
-				<fuelCapacity>120</fuelCapacity>
+				<fuelConsumptionRate>100</fuelConsumptionRate>
+				<fuelCapacity>360</fuelCapacity>
 				<fuelConsumptionCondition>FlyingOrDrafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleLauncher">
-				<controlInFlight>false</controlInFlight>
-				<launchProtocol Class="Vehicles.RocketTakeoff">
+				<controlInFlight>true</controlInFlight>
+				<launchProtocol Class="Vehicles.VTOLTakeoff">
 					<movementType>Decelerate</movementType>
-					<rocketTiltRate>0.025</rocketTiltRate>
-					<thrusterSize>0.5~1.25</thrusterSize>
-					<dustSize>0.5~1.5</dustSize>
-					<burnRadius>2</burnRadius>
 					<launchProperties>
-						<speed>0.1</speed>
+						<speed>0.2</speed>
 						<maxTicks>500</maxTicks>
 						<additionalLaunchTextures>
 							<li>
@@ -208,24 +184,15 @@
 								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
 								<drawSize>(2, 2)</drawSize>
 								<drawOffset>(0.665, 0, -1.5)</drawOffset>
-								<shaderType>Transparent</shaderType>
-								<layer>-1</layer>
-							</li>
-							<li>
-								<texPath>Animations/JetEffect</texPath>
-								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
-								<drawSize>(2, 2)</drawSize>
-								<drawOffset>(0, 0, -0.75)</drawOffset>
 								<shaderType>Transparent</shaderType>
 								<layer>-1</layer>
 							</li>
 						</additionalLaunchTextures>
 					</launchProperties>
 					<landingProperties>
-						<speed>0.3</speed>
+						<speed>0.1</speed>
 						<maxTicks>500</maxTicks>
 						<delayByTicks>100</delayByTicks>
-						<forcedRotation>North</forcedRotation>
 						<additionalLaunchTextures>
 							<li>
 								<texPath>Animations/JetEffect</texPath>
@@ -243,17 +210,29 @@
 								<shaderType>Transparent</shaderType>
 								<layer>-1</layer>
 							</li>
-							<li>
-								<texPath>Animations/JetEffect</texPath>
-								<graphicClass>Vehicles.Graphic_Animate</graphicClass>
-								<drawSize>(2, 2)</drawSize>
-								<drawOffset>(0, 0, -0.75)</drawOffset>
-								<shaderType>Transparent</shaderType>
-								<layer>-1</layer>
-							</li>
 						</additionalLaunchTextures>
 					</landingProperties>
 				</launchProtocol>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>Reaver_Shotgun</turretDef>
+						
+						<gizmoLabel>Shotgun Turret</gizmoLabel>
+						<autoTargeting>true</autoTargeting>
+						
+						<key>mainTurret</key>
+					</li>
+					<li>
+						<turretDef>Reaver_Rockets</turretDef>
+						
+						<gizmoLabel>Missile Pods</gizmoLabel>
+						<autoTargeting>false</autoTargeting>
+						
+						<key>missilePods</key>
+					</li>
+				</turrets>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>

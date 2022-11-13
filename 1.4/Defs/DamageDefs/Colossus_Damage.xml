@@ -16,16 +16,16 @@
     <armorCategory>Sharp</armorCategory>
     <minDamageToFragment>15</minDamageToFragment>
     <defaultDamage>10</defaultDamage>
-    <defaultStoppingPower>1.5</defaultStoppingPower>
+    <defaultStoppingPower>10</defaultStoppingPower>
     <defaultArmorPenetration>10</defaultArmorPenetration>
-    <buildingDamageFactor>3</buildingDamageFactor>
-    <plantDamageFactor>3</plantDamageFactor>
+    <buildingDamageFactor>2</buildingDamageFactor>
+    <plantDamageFactor>0.1</plantDamageFactor>
     <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
     <explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
     <explosionCellMote>Mote_Bombardment</explosionCellMote>
     <explosionColorCenter>(0.1,1,1)</explosionColorCenter>
     <explosionColorEdge>(0.1,0.9,0.9)</explosionColorEdge>
-    <soundExplosion>Explosion_EMP</soundExplosion>
+    <soundExplosion>PSV_ColossusMiss</soundExplosion>
     <combatLogRules>Damage_Bomb</combatLogRules>
 </DamageDef>
 </Defs>

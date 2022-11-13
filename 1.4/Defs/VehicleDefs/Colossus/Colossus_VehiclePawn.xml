@@ -19,7 +19,7 @@
 		
 		<buildDef>PSV_Colossus_Blueprint</buildDef>
 		
-		<size>(3,3)</size>
+		<size>(5,5)</size>
 		
 		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Combat</vehicleCategory>
@@ -27,17 +27,17 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<ArmorRating_Blunt>0.42</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.68</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.52</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.88</ArmorRating_Sharp>
 			<Flammability>0.2</Flammability>
 			<MarketValue>7000</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
 			<Mass>800</Mass>
-			<MoveSpeed>6.6</MoveSpeed>
+			<MoveSpeed>8.6</MoveSpeed>
 			<CargoCapacity>60</CargoCapacity>
-			<RepairRate>0.1</RepairRate>
+			<RepairRate>0.2</RepairRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
@@ -48,12 +48,12 @@
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>4</visibility>
+			<visibility>5</visibility>
 			
 			<customRoadCosts AssignDefaults = "0.8"/>
 			
 			<vehicleJobLimitations>
-				<li>(RepairVehicle, 3)</li>
+				<li>(RepairVehicle, 4)</li>
 			</vehicleJobLimitations>
 			
 			<roles>
@@ -74,7 +74,7 @@
 					
 					<hitbox>
 						<cells>
-							<li>(0, 1)</li>
+							<li>(0, -1)</li>
 						</cells>
 					</hitbox>
 				</li>
@@ -202,12 +202,14 @@
 				</categories>
 			</li>
 			<li>
-				<key>FrontLeftTrack</key>
-				<label>Front Left Track</label>
-				<health>140</health>
+				<key>FrontLeftTrackOut</key>
+				<label>Outside Front Left Track</label>
+				<health>200</health>
 				
 				<hitbox>
-					<side>Left</side>
+					<cells>
+						<li>(-2, 2)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -215,12 +217,14 @@
 				</categories>
 			</li>
 			<li>
-				<key>FrontRightTrack</key>
-				<label>Front Right Track</label>
-				<health>140</health>
+				<key>FrontLeftTrackIn</key>
+				<label>Inside Front Left Track</label>
+				<health>200</health>
 				
 				<hitbox>
-					<side>Right</side>
+					<cells>
+						<li>(-1, 2)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -228,12 +232,14 @@
 				</categories>
 			</li>
 			<li>
-				<key>BackLeftTrack</key>
-				<label>Back Left Track</label>
-				<health>140</health>
+				<key>FrontRightTrackOut</key>
+				<label>Outside Front Right Track</label>
+				<health>200</health>
 				
 				<hitbox>
-					<side>Left</side>
+					<cells>
+						<li>(2, 2)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -241,12 +247,74 @@
 				</categories>
 			</li>
 			<li>
-				<key>BackRightTrack</key>
-				<label>Back Right Track</label>
-				<health>140</health>
+				<key>FrontRightTrackIn</key>
+				<label>Inside Front Right Track</label>
+				<health>200</health>
 				
 				<hitbox>
-					<side>Right</side>
+					<cells>
+						<li>(1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftTrackOut</key>
+				<label>Outside Back Left Track</label>
+				<health>200</health>
+				
+				<hitbox>
+					<cells>
+						<li>(-2, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftTrackIn</key>
+				<label>Inside Back Left Track</label>
+				<health>200</health>
+				
+				<hitbox>
+					<cells>
+						<li>(-2, -1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightTrackOut</key>
+				<label>Outside Back Right Track</label>
+				<health>200</health>
+				
+				<hitbox>
+					<cells>
+						<li>(2, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightTrackIn</key>
+				<label>Inside Back Right Track</label>
+				<health>200</health>
+				
+				<hitbox>
+					<cells>
+						<li>(1, -2)</li>
+					</cells>
 				</hitbox>
 				
 				<categories>
@@ -261,7 +329,7 @@
 				
 				<hitbox>
 					<cells>
-						<li>(0, 1)</li>
+						<li>(0, 0)</li>
 					</cells>
 				</hitbox>
 				
@@ -272,7 +340,7 @@
 			<li>
 				<key>LeftArmorPlating</key>
 				<label>Left Armor Plating</label>
-				<health>100</health>
+				<health>300</health>
 				
 				<hitbox>
 					<side>Left</side>
@@ -281,7 +349,7 @@
 			<li>
 				<key>RightArmorPlating</key>
 				<label>Right Armor Plating</label>
-				<health>100</health>
+				<health>300</health>
 				
 				<hitbox>
 					<side>Right</side>
@@ -290,7 +358,7 @@
 			<li>
 				<key>FrontArmorPlating</key>
 				<label>Front Armor Plating</label>
-				<health>100</health>
+				<health>600</health>
 				
 				<hitbox>
 					<side>Front</side>
@@ -325,7 +393,7 @@
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
-				<health>100</health>
+				<health>200</health>
 			</li>
 		</components>
 
@@ -442,23 +510,16 @@
 					</li>
 				</turrets>
 			</li>
-			<li Class="VFECore.CompProperties_ShieldBubble">
-				<EnergyShieldRechargeRate>0.1</EnergyShieldRechargeRate>         <!-- Set the shield energy recharge rate -->
-				<EnergyShieldEnergyMax>1000</EnergyShieldEnergyMax>               <!-- Set the shield max energy -->
-				<blockRangedAttack>true</blockRangedAttack>                      <!-- Set if it block incoming ranged attack -->
-				<blockMeleeAttack>false</blockMeleeAttack>                       <!-- Set if it block incoming melee attack -->
-				<showWhenDrafted>true</showWhenDrafted>                          <!-- Set if it should be showed when the pawn is drafted -->
-				<showAlways>false</showAlways>                                   <!-- Set if it should always be showed -->
-				<showOnHostiles>true</showOnHostiles>                            <!-- Set if it should be showed on hostile pawns -->
-				<showOnNeutralInCombat>true</showOnNeutralInCombat>              <!-- Set if it should be showed on neutral pawns -->
-				<maxShieldSize>5.8</maxShieldSize>                               <!-- Set maximum shield size (when energy is full) -->
-				<minShieldSize>5.2</minShieldSize>                               <!-- Set minimum shield size (when energy is empty) -->
-				<shieldColor>(1, 1, 1, 1)</shieldColor>                          <!-- Set the shield color (can be rgb or rgba) -->
-				<EnergyLossPerDamage>1</EnergyLossPerDamage>                    <!-- Set the damage multiplier (0 mean the shield will never break) -->
-				<disableRotation>true</disableRotation>                          <!-- Set if the shield texture can be rotated -->
-				<absorbDamageSound>EnergyShield_AbsorbDamage</absorbDamageSound> <!-- SoundDef played when absorbing damage -->
-				<brokenSound>EnergyShield_Broken</brokenSound>                   <!-- SoundDef played when the shield break -->
-				<resetSound>EnergyShield_Reset</resetSound>                      <!-- SoundDef played when the shield reset (regenerate) -->
+			<li Class="CompProperties_ProjectileInterceptor">
+				<radius>6</radius>
+				<interceptAirProjectiles>true</interceptAirProjectiles>
+				<interceptGroundProjectiles>true</interceptGroundProjectiles>
+				<interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+				<color>(0.6, 0.2, 0.6)</color>
+				<reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
+				<activeSound>MortarShield_Ambience</activeSound>
+				<hitPoints>3000</hitPoints>
+				<disarmedByEmpForTicks>1000</disarmedByEmpForTicks>
 			  </li>
 		</comps>
 	</Vehicles.VehicleDef>
