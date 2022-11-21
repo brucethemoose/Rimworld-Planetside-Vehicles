@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Thanks to Vanilla Vehicles Expanded for the tank template -->
 <Defs>
+	<ThingDef ParentName="MoteBase">
+		<defName>Mote_PSV_Sonicflash</defName>
+		<mote>
+		  <fadeInTime>0.1</fadeInTime>
+		  <solidTime>0.1</solidTime>
+		  <fadeOutTime>0.5</fadeOutTime>
+		</mote>
+		<graphicData>
+		  <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+		  <texPath>Things/Mote/PsychicConditionCauserMask</texPath>
+		  <shaderType>MotePsychicConditionCauser</shaderType>
+		  <shaderParameters>
+			<_distortionIntensity>0.035</_distortionIntensity>
+			<_brightnessMultiplier>1.3</_brightnessMultiplier>
+			<_distortionScale>30</_distortionScale>
+		  </shaderParameters>
+		  <drawSize>10</drawSize>
+		</graphicData>
+	</ThingDef>
 	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
-		<defName>Bullet_Colossus</defName>
+		<defName>PSV_Bullet_Colossus</defName>
 		<label>Railgun Slug</label>
 		<projectile>
 			<damageDef>PSV_ColossusDamage</damageDef>
-			<damageAmountBase>300</damageAmountBase>
-			<armorPenetrationBase>10</armorPenetrationBase>
-			<stoppingPower>50</stoppingPower>
+			<damageAmountBase>150</damageAmountBase>
 			<speed>450</speed>
 		</projectile>
 		<thingClass>VFECore.GaussProjectile</thingClass>
@@ -16,56 +33,35 @@
 			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
 			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
 			<shaderType>MoteGlow</shaderType>
-			<color>(255,0,255)</color>
+			<color>(255,50,255)</color>
 		</graphicData>
-		<reachMaxRangeAlways>false</reachMaxRangeAlways>
+		<reachMaxRangeAlways>true</reachMaxRangeAlways>
 		<drawOffscreen>true</drawOffscreen>
-		<lifeTimeDuration>100</lifeTimeDuration>
+		<lifeTimeDuration>60</lifeTimeDuration>
 		<minDistanceToAffect>8.0</minDistanceToAffect>
 		<widthScaleFactor>0.10</widthScaleFactor>
 		<heightScaleFactor>1</heightScaleFactor>
 		<startingPositionOffset>(0,0,-1)</startingPositionOffset>
-		<totalSizeScale>0.8</totalSizeScale>
+		<totalSizeScale>1.0</totalSizeScale>
 		<tickFrameRate>2</tickFrameRate>
 		<finalTickFrameRate>2</finalTickFrameRate>
 		<tickDamageRate>5</tickDamageRate>
 		<dealsDamageOnce>true</dealsDamageOnce>
 		<stopWhenHit>false</stopWhenHit>
-		<stopWhenHitAt>
-			<li>MineableSteel</li>
-			<li>CollapsedRocks</li>
-			<li>MineableSilver</li>
-			<li>MineableGold</li>
-			<li>MineableUranium</li>
-			<li>MineablePlasteel</li>
-			<li>MineableJade</li>
-			<li>MineableComponentsIndustrial</li>
-			<li>RaisedRocks</li>
-			<li>Sandstone</li>
-			<li>SmoothedSandstone</li>
-			<li>Granite</li>
-			<li>SmoothedGranite</li>
-			<li>Limestone</li>
-			<li>SmoothedLimestone</li>
-			<li>Slate</li>
-			<li>SmoothedSlate</li>
-			<li>Marble</li>
-			<li>SmoothedMarble</li>
-		</stopWhenHitAt>
 	</VFECore.ExpandableProjectileDef>
 
 	<Vehicles.VehicleTurretDef Name="ColossusMainTurret" ParentName="TurretBase">
 		<defName>Colossus_MainTurret</defName>
-		<label>Colossus Turret</label>
+		<label>Skylance Battery</label>
 		<turretType>Rotatable</turretType>
 		<shotSound>PSV_ColossusCannonSound</shotSound>
 		<reloadSound>Standard_Reload</reloadSound>
 		
-		<projectile>Bullet_Colossus</projectile>
-		<reloadTimer>5.8</reloadTimer>
-		<warmUpTimer>1.2</warmUpTimer>
+		<projectile>PSV_Bullet_Colossus</projectile>
+		<reloadTimer>4.0</reloadTimer>
+		<warmUpTimer>1.188</warmUpTimer>
 		<magazineCapacity>1</magazineCapacity>
-		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<chargePerAmmoCount>3</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 
 		
@@ -75,20 +71,20 @@
 		<restrictionType>Vehicles.TurretRestrictions_Stationary</restrictionType>
 		<projectileOffset>2.5</projectileOffset>
 		<hitFlags>IntendedTarget</hitFlags>
-		<maxRange>45.9</maxRange>
+		<maxRange>53.9</maxRange>
 		<minRange>8</minRange>
 		
 		<attachProjectileFlag>PSV_Tank</attachProjectileFlag>
 		
 		<recoil>
-			<distanceTotal>0.45</distanceTotal>
-			<distancePerTick>0.15</distancePerTick>
+			<distanceTotal>0.02</distanceTotal>
+			<distancePerTick>0.01</distancePerTick>
 			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
 		</recoil>
 		
 		<vehicleRecoil>
-			<distanceTotal>0.1</distanceTotal>
-			<distancePerTick>0.05</distancePerTick>
+			<distanceTotal>0.04</distanceTotal>
+			<distancePerTick>0.02</distancePerTick>
 			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
 		</vehicleRecoil>
 		
@@ -96,7 +92,7 @@
 			<li>
 				<shotsPerBurst>1</shotsPerBurst>
 				<ticksBetweenBursts>1</ticksBetweenBursts>
-				<spreadRadius>2</spreadRadius>
+				<spreadRadius>0.2</spreadRadius>
 				<label>Single Shot</label>
 				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
@@ -121,13 +117,23 @@
 				<moteDef>Mote_CannonPlume</moteDef>
 				<animationType>Reset</animationType>
 			</li>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonFlash</moteDef>
+				<animationType>Reset</animationType>
+			</li>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_PSV_Sonicflash</moteDef>
+				<animationType>Reset</animationType>
+			</li>
 		</motes>
 	</Vehicles.VehicleTurretDef>
 
 	
 	<Vehicles.VehicleTurretDef ParentName="TurretBase">
 		<defName>Colossus_PDTurret</defName>
-		<label>Poit Defense Turret</label>
+		<label>PD Turret</label>
 		
 		<turretType>Rotatable</turretType>
 		<shotSound>GunShotA</shotSound>

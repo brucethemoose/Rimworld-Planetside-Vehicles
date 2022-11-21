@@ -13,8 +13,7 @@
             <clipPath>Colossus_Idle</clipPath>
           </li>
         </grains>      
-        <pitchRange>0.99~1.01</pitchRange>
-        <volumeRange>200~200</volumeRange>
+        <volumeRange>2000~2000</volumeRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>

@@ -1,0 +1,60 @@
+<Defs>
+	<Vehicles.VehicleDef Name = "PSV_BaseVehicle" ParentName = "BaseVehiclePawn" Abstract = "True">
+		<properties>
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+		</properties>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleDef ParentName="PSV_BaseVehicle" Name="PSV_ESF" Abstract="True">
+		<defName>PSV_ESF</defName>
+
+		<nameable>false</nameable>
+		
+		<size>(3,4)</size>
+		<uiIconScale>0.85</uiIconScale>
+		<canCaravan LockSetting="True">false</canCaravan>
+
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Industrial</techLevel>
+		<vehicleType>Air</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.34</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.70</ArmorRating_Sharp>
+			<Flammability>0.5</Flammability>
+			<MarketValue>3000</MarketValue>
+		</statBases>
+
+		
+		<properties>
+			<visibility>5</visibility>
+			<defaultBiomesImpassable>true</defaultBiomesImpassable>
+
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+			
+			<roles>
+				<li>
+					<key>Pilot</key>
+					<label>Pilot</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					<handlingTypes>
+						<li>Movement</li>
+						<li>Cannon</li>
+					</handlingTypes>
+					<turretIds>
+						<li>mainTurret</li>
+						<li>missilePods</li>
+					</turretIds>
+					<hitbox>
+						<side>Front</side>
+					</hitbox>
+				</li>
+			</roles>
+		</properties>
+		
+	</Vehicles.VehicleDef>
+</Defs>

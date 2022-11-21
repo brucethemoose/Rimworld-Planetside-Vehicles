@@ -2,8 +2,8 @@
 <!--Thanks to Vanilla Vehicles Expanded for the tank template -->
 <Defs>
 	
-	<Vehicles.VehicleTurretDef Name="ReaverShotgun" ParentName="TurretBase">
-		<defName>Reaver_Shotgun</defName>
+	<Vehicles.VehicleTurretDef ParentName="TurretBase">
+		<defName>PSV_Reaver_Shotgun</defName>
 		<label>M30 Air Hammer</label>
 		<turretType>Rotatable</turretType>
 		<shotSound>PSV_AirHammerSound</shotSound>
@@ -12,7 +12,7 @@
 		<projectile>Bullet_Shotgun</projectile>
 		<reloadTimer>4.8</reloadTimer>
 		<warmUpTimer>0.2</warmUpTimer>
-		<magazineCapacity>14</magazineCapacity>
+		<magazineCapacity>10</magazineCapacity>
 		<chargePerAmmoCount>1</chargePerAmmoCount>
 		<genericAmmo>true</genericAmmo>
 
@@ -22,7 +22,7 @@
 		
 		<projectileOffset>2.5</projectileOffset>
 		<hitFlags>IntendedTarget</hitFlags>
-		<maxRange>20.0</maxRange>
+		<maxRange>16</maxRange>
 		<minRange>0</minRange>
 		
 		
@@ -34,11 +34,17 @@
 		
 		<fireModes>
 			<li>
-				<shotsPerBurst>2</shotsPerBurst>
-				<ticksBetweenShots>0</ticksBetweenShots>
-				<ticksBetweenBursts>30</ticksBetweenBursts>
-				<spreadRadius>2</spreadRadius>
+				<shotsPerBurst>10</shotsPerBurst>
+				<ticksBetweenShots>20</ticksBetweenShots>
+				<ticksBetweenBursts>220</ticksBetweenBursts>
 				<label>Full Auto</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>10</shotsPerBurst>
+				<ticksBetweenShots>40</ticksBetweenShots>
+				<ticksBetweenBursts>220</ticksBetweenBursts>
+				<label>Semi Auto</label>
 				<texPath>UI/Gizmos/FireRate_Single</texPath>
 			</li>
 		</fireModes>
@@ -48,7 +54,12 @@
 				<li>Steel</li>
 			</thingDefs>
 		</ammunition>
-		
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_Shotgun</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(0.01, 0.01)</drawSize>
+		</graphicData>
 		<motes>
 			<li>
 				<cycles>1</cycles>
@@ -56,54 +67,5 @@
 				<animationType>Reset</animationType>
 			</li>
 		</motes>
-	</Vehicles.VehicleTurretDef>
-
-	
-	<Vehicles.VehicleTurretDef ParentName="TurretBase">
-		<defName>Reaver_Rockets</defName>
-		<label>Breaker Missile Pods</label>
-		
-		<turretType>Static</turretType>
-		<shotSound>Jumpjet_Rocket_Sound</shotSound>
-		
-		<projectile>Bullet_ESFRocket</projectile>
-		<reloadTimer>15.0</reloadTimer>
-		<warmUpTimer>1.0</warmUpTimer>
-		
-		<magazineCapacity>24</magazineCapacity>
-		<genericAmmo>true</genericAmmo>
-		
-		
-
-		<projectileOffset>0.1</projectileOffset>
-		<projectileShifting>
-			<li>0.2</li>
-			<li>-0.2</li>
-		</projectileShifting>
-		
-		<minRange>8</minRange>
-		<maxRange>35</maxRange>
-
-		<fireModes>
-			<li>
-				<shotsPerBurst>12</shotsPerBurst>
-				<ticksBetweenShots>20</ticksBetweenShots>
-				<ticksBetweenBursts>360</ticksBetweenBursts>
-				<label>Burst</label>
-				<texPath>UI/Gizmos/FireRate_Burst</texPath>
-			</li>
-			<li>
-				<shotsPerBurst>1</shotsPerBurst>
-				<ticksBetweenShots>60</ticksBetweenShots>
-				<ticksBetweenBursts>80</ticksBetweenBursts>
-				<label>Single</label>
-				<texPath>UI/Gizmos/FireRate_Single</texPath>
-			</li>
-		</fireModes>
-		<ammunition>
-			<thingDefs>
-				<li>Shell_HighExplosive</li>
-			</thingDefs>
-		</ammunition>
 	</Vehicles.VehicleTurretDef>
 </Defs>

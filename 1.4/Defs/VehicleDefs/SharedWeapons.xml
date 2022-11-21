@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<Vehicles.VehicleTurretDef ParentName="TurretBase">
+		<defName>PSV_ESF_Rockets</defName>
+		<label>Rocket Pods</label>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>PSV_JumpjetRocketSound</shotSound>
+		
+		<projectile>Proj_Rocket</projectile>
+		<reloadTimer>15.0</reloadTimer>
+		<warmUpTimer>1.0</warmUpTimer>
+		
+		<magazineCapacity>12</magazineCapacity>
+		<genericAmmo>true</genericAmmo>
+		<chargePerAmmoCount>15</chargePerAmmoCount>
+		
+		
+
+		<projectileOffset>0.1</projectileOffset>
+		<projectileShifting>
+			<li>0.2</li>
+			<li>-0.2</li>
+		</projectileShifting>
+		
+		<minRange>8</minRange>
+		<maxRange>35</maxRange>
+
+		<fireModes>
+			<li>
+				<shotsPerBurst>12</shotsPerBurst>
+				<ticksBetweenShots>17</ticksBetweenShots>
+				<ticksBetweenBursts>360</ticksBetweenBursts>
+				<spreadRadius>5.7</spreadRadius>
+				<label>Burst</label>
+				<texPath>UI/Gizmos/FireRate_Burst</texPath>
+			</li>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenShots>60</ticksBetweenShots>
+				<ticksBetweenBursts>80</ticksBetweenBursts>
+				<label>Single</label>
+				<spreadRadius>1</spreadRadius>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		<graphicData>
+			<texPath>Things/Building/Security/TurretRocketFull_Top</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplexPattern</shaderType>
+			<drawSize>(0.01, 0.01)</drawSize>
+		</graphicData>
+		<ammunition>
+			<thingDefs>
+				<li>Chemfuel</li>
+			</thingDefs>
+		</ammunition>
+	</Vehicles.VehicleTurretDef>
+</Defs>

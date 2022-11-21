@@ -27,16 +27,16 @@
 		<vehicleType>Land</vehicleType>
 		
 		<statBases>
-			<ArmorRating_Blunt>0.52</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.88</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.48</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.89</ArmorRating_Sharp>
 			<Flammability>0.2</Flammability>
 			<MarketValue>7000</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
-			<Mass>800</Mass>
-			<MoveSpeed>8.6</MoveSpeed>
-			<CargoCapacity>60</CargoCapacity>
+			<Mass>900</Mass>
+			<MoveSpeed>6.0</MoveSpeed>
+			<CargoCapacity>100</CargoCapacity>
 			<RepairRate>0.2</RepairRate>
 		</vehicleStats>
 		
@@ -48,9 +48,7 @@
 		</soundSustainersOnEvent>
 		
 		<properties>
-			<visibility>5</visibility>
-			
-			<customRoadCosts AssignDefaults = "0.8"/>
+			<visibility>3.5</visibility>
 			
 			<vehicleJobLimitations>
 				<li>(RepairVehicle, 4)</li>
@@ -178,17 +176,17 @@
 			<li>
 				<key>Engine</key>
 				<label>Engine</label>
-				<health>75</health>
+				<health>100</health>
+				<depth>Internal</depth>
 				<efficiencyWeight>10</efficiencyWeight>
 				
 				<reactors>
 					<li Class = "Vehicles.Reactor_Explosive">
 						<indicator>VF_Explosive</indicator>
 						<chance>0.25</chance>
-						<radius>5</radius>
+						<radius>6</radius>
 						<damageDef>Bomb</damageDef>
 					</li>
-					<li Class = "Vehicles.Reactor_FuelLeak"/>
 				</reactors>
 				
 				<hitbox>
@@ -204,7 +202,12 @@
 			<li>
 				<key>FrontLeftTrackOut</key>
 				<label>Outside Front Left Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -218,8 +221,12 @@
 			</li>
 			<li>
 				<key>FrontLeftTrackIn</key>
-				<label>Inside Front Left Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -234,7 +241,12 @@
 			<li>
 				<key>FrontRightTrackOut</key>
 				<label>Outside Front Right Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -249,7 +261,12 @@
 			<li>
 				<key>FrontRightTrackIn</key>
 				<label>Inside Front Right Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -264,7 +281,12 @@
 			<li>
 				<key>BackLeftTrackOut</key>
 				<label>Outside Back Left Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -279,7 +301,12 @@
 			<li>
 				<key>BackLeftTrackIn</key>
 				<label>Inside Back Left Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -294,7 +321,12 @@
 			<li>
 				<key>BackRightTrackOut</key>
 				<label>Outside Back Right Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -309,7 +341,12 @@
 			<li>
 				<key>BackRightTrackIn</key>
 				<label>Inside Back Right Track</label>
-				<health>200</health>
+				<health>150</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
 				
 				<hitbox>
 					<cells>
@@ -340,7 +377,12 @@
 			<li>
 				<key>LeftArmorPlating</key>
 				<label>Left Armor Plating</label>
-				<health>300</health>
+				<health>250</health>
+				<depth>External</depth>
+				<armor>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
 				
 				<hitbox>
 					<side>Left</side>
@@ -349,7 +391,12 @@
 			<li>
 				<key>RightArmorPlating</key>
 				<label>Right Armor Plating</label>
-				<health>300</health>
+				<health>250</health>
+				<depth>External</depth>
+				<armor>
+					<ArmorRating_Blunt>0.92</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
 				
 				<hitbox>
 					<side>Right</side>
@@ -358,17 +405,34 @@
 			<li>
 				<key>FrontArmorPlating</key>
 				<label>Front Armor Plating</label>
-				<health>600</health>
-				
+				<health>400</health>
+				<depth>External</depth>
+				<armor>
+					<ArmorRating_Blunt>0.98</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.52</ArmorRating_Sharp>
+				</armor>
 				<hitbox>
 					<side>Front</side>
 				</hitbox>
 			</li>
 			<li>
+				<key>BackArmorPlating</key>
+				<label>Rear Armor Plating</label>
+				<health>100</health>
+				<depth>External</depth>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
 				<key>Chemtank</key>
 				<label>Chemtank</label>
-				<health>60</health>
-				
+				<health>80</health>
+				<depth>Internal</depth>
+				<reactors>
+					<li Class = "Vehicles.Reactor_FuelLeak"/>
+				</reactors>
 				<hitbox>
 					<cells>
 						<li>(0, -1)</li>
@@ -379,21 +443,28 @@
 				<key>Dashboard</key>
 				<label>Dashboard</label>
 				<health>45</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>SteeringApparatus</key>
 				<label>Steering Apparatus</label>
 				<health>20</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
 			</li>
 			<li>
 				<key>CortiumTank</key>
 				<label>Cortium Tank</label>
 				<health>20</health>
+				<depth>Internal</depth>
 			</li>
 			<li>
 				<key>Roof</key>
 				<label>Roof</label>
 				<health>200</health>
+				<depth>External</depth>
+				<hitWeight>10</hitWeight>
 			</li>
 		</components>
 
@@ -401,9 +472,9 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>Chemfuel</fuelType>
 				<leakDef>Filth_Fuel</leakDef>
-				<fuelConsumptionRate>40</fuelConsumptionRate>
+				<fuelConsumptionRate>24</fuelConsumptionRate>
 				<fuelConsumptionWorldMultiplier>1.2</fuelConsumptionWorldMultiplier>
-				<fuelCapacity>120</fuelCapacity>
+				<fuelCapacity>150</fuelCapacity>
 				<fuelConsumptionCondition>Drafted</fuelConsumptionCondition>
 			</li>
 			<li Class="Vehicles.CompProperties_VehicleTurrets">
@@ -412,9 +483,9 @@
 						<turretDef>Colossus_MainTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0.45)</north>
-							<south>(0, 0.35)</south>
-							<east>(0.05, 0.4)</east>
+							<north>(0, -0.5)</north>
+							<south>(0, 0.5)</south>
+							<east>(-0.5, 0)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -423,8 +494,8 @@
 							<south>(0, -13)</south>
 						</uiRenderProperties>
 						
-						<gizmoLabel>Main Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<gizmoLabel>Skylance Battery</gizmoLabel>
+						<autoTargeting>true</autoTargeting>
 						
 						<key>mainTurret</key>
 					</li>
@@ -432,9 +503,9 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0.45)</north>
-							<south>(0, 0.35)</south>
-							<east>(0.05, 0.4)</east>
+							<north>(2, -2)</north>
+							<south>(-2, 2)</south>
+							<east>(2, 2)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -452,9 +523,9 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(1, 0)</north>
-							<south>(0, 0)</south>
-							<east>(-1, 0)</east>
+							<north>(2, 2)</north>
+							<south>(-2, -2)</south>
+							<east>(2, -2)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -472,9 +543,9 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0)</north>
-							<south>(1, 0)</south>
-							<east>(1, 0)</east>
+							<north>(-2, -2)</north>
+							<south>(2, 2)</south>
+							<east>(-2, 2)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -492,9 +563,9 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(0, 0)</north>
-							<south>(1, 0)</south>
-							<east>(1, 0)</east>
+							<north>(-2, 2)</north>
+							<south>(2, -2)</south>
+							<east>(-2, -2)</east>
 						</renderProperties>
 						
 						<uiRenderProperties>

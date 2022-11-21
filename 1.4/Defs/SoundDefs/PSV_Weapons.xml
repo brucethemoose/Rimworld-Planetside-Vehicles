@@ -31,7 +31,7 @@
             <clipPath>Colossus_Flyby</clipPath>
           </li>
         </grains>
-        <volumeRange>200~200</volumeRange>
+        <volumeRange>100~100</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -93,13 +93,25 @@
         </grains>
         <volumeRange>1~30</volumeRange>
       </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_ColossusGeckoSound</defName>  
+    <context>MapOnly</context>  
+    <maxSimultaneous>2</maxSimultaneous>  
+    <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>Colossus_Flyby</clipPath>
+            <clipPath>Colossus_Gecko_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Gecko_01</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Gecko_01</clipPath>
           </li>
         </grains>
-        <volumeRange>50~100</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -126,6 +138,7 @@
             <clipPath>ESF_Rocket_05</clipPath>
           </li>
         </grains>
+        <volumeRange>150~200</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
