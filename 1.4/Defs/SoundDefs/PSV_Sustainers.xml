@@ -13,12 +13,88 @@
             <clipPath>Colossus_Idle</clipPath>
           </li>
         </grains>      
-        <volumeRange>2000~2000</volumeRange>
+        <volumeRange>25~30</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
         <sustainAttack>2.5</sustainAttack>      
         <sustainRelease>2.5</sustainRelease>
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>PSV_VehicleEngineColossusHigh</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_High</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>10~15</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Track_1</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Colossus_Track_2</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~30</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>PSV_ShieldActive</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Shield_Active</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>25~30</volumeRange>
+        <sustainAttack>2.5</sustainAttack>      
+        <sustainRelease>2.5</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_ShieldActivate</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Shield_Activate</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>50~50</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
   
 
   <SoundDef>

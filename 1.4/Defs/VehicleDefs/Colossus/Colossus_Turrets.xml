@@ -32,12 +32,11 @@
 		<graphicData>
 			<texPath>Projectiles/Proj_CoilgunFadeIn</texPath>
 			<texPathFadeOut>Projectiles/Proj_CoilgunFadeOut</texPathFadeOut>
-			<shaderType>MoteGlow</shaderType>
 			<color>(255,50,255)</color>
 		</graphicData>
-		<reachMaxRangeAlways>true</reachMaxRangeAlways>
+		<reachMaxRangeAlways>false</reachMaxRangeAlways>
 		<drawOffscreen>true</drawOffscreen>
-		<lifeTimeDuration>60</lifeTimeDuration>
+		<lifeTimeDuration>40</lifeTimeDuration>
 		<minDistanceToAffect>8.0</minDistanceToAffect>
 		<widthScaleFactor>0.10</widthScaleFactor>
 		<heightScaleFactor>1</heightScaleFactor>
@@ -133,16 +132,16 @@
 	
 	<Vehicles.VehicleTurretDef ParentName="TurretBase">
 		<defName>Colossus_PDTurret</defName>
-		<label>PD Turret</label>
+		<label>M20 Gecko</label>
 		
 		<turretType>Rotatable</turretType>
-		<shotSound>GunShotA</shotSound>
+		<shotSound>PSV_ColossusGeckoSound</shotSound>
 		
 		<projectile>Bullet_MiniTurret</projectile>
 		<reloadTimer>2.4</reloadTimer>
 		<warmUpTimer>1.2</warmUpTimer>
 		
-		<magazineCapacity>75</magazineCapacity>
+		<magazineCapacity>100</magazineCapacity>
 		<genericAmmo>true</genericAmmo>
 		
 		<hitFlags>IntendedTarget</hitFlags>
@@ -156,7 +155,7 @@
 			<li>-0.2</li>
 		</projectileShifting>
 		
-		<minRange>1</minRange>
+		<minRange>0.5</minRange>
 		<maxRange>28.9</maxRange>
 		
 		<recoil>
@@ -168,9 +167,9 @@
 		
 		<fireModes>
 			<li>
-				<shotsPerBurst>4</shotsPerBurst>
-				<ticksBetweenShots>6</ticksBetweenShots>
-				<ticksBetweenBursts>60</ticksBetweenBursts>
+				<shotsPerBurst>9</shotsPerBurst>
+				<ticksBetweenShots>8</ticksBetweenShots>
+				<ticksBetweenBursts>288</ticksBetweenBursts>
 				<label>Burst</label>
 				<texPath>UI/Gizmos/FireRate_Burst</texPath>
 			</li>

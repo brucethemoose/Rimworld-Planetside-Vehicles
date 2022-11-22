@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--Thanks to Vanilla Vehicles Expanded for the tank template -->
 <Defs>	
+	<EffecterDef>
+		<defName>PSV_Shield_Reactivate_Effect</defName>
+		<children>
+		  <li>
+			<subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+			<soundDef>PSV_ShieldActivate</soundDef>
+			<spawnLocType>OnSource</spawnLocType>
+		  </li>
+		  <li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<fleckDef>GrowingFlash</fleckDef>
+			<burstCount>1~1</burstCount>
+			<scale>0~0</scale>
+			<spawnLocType>OnSource</spawnLocType>
+		  </li>
+		</children>
+	</EffecterDef>
 	<Vehicles.VehicleDef ParentName="BaseVehiclePawn">
 		<defName>PSV_Colossus</defName>
 		<label>Colossus</label>
@@ -12,7 +29,7 @@
 			<texPath>Things/Vehicles/Colossus/Colossus</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplexPattern</shaderType>
-			<drawSize>(4,4)</drawSize>
+			<drawSize>(8,6)</drawSize>
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
@@ -35,17 +52,27 @@
 		
 		<vehicleStats>
 			<Mass>900</Mass>
-			<MoveSpeed>6.0</MoveSpeed>
+			<MoveSpeed>6.8</MoveSpeed>
 			<CargoCapacity>100</CargoCapacity>
 			<RepairRate>0.2</RepairRate>
 		</vehicleStats>
 		
 		<soundSustainersOnEvent>
 			<li>
+				<key>(MoveStart, MoveStop)</key>
+				<value>PSV_VehicleEngineColossusHigh</value>
+			</li>
+			<li>
 				<key>(DraftOn, DraftOff)</key>
-				<value>PSV_ColossusMove</value>
+				<value>PSV_VehicleEngineColossus</value>
 			</li>
 		</soundSustainersOnEvent>
+		<soundOneShotsOnEvent>
+			<li>
+				<key>MoveStop</key>
+				<value>PSV_Deploy</value>
+			</li>
+		</soundOneShotsOnEvent>
 		
 		<properties>
 			<visibility>3.5</visibility>
@@ -503,9 +530,10 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(2, -2)</north>
-							<south>(-2, 2)</south>
+							<north>(-2, 2)</north>
+							<south>(2, -2)</south>
 							<east>(2, 2)</east>
+							<west>(-2, -2)</west>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -515,7 +543,7 @@
 						</uiRenderProperties>
 						
 						<gizmoLabel>Top Left Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<autoTargeting>true</autoTargeting>
 						
 						<key>topLeftTurret</key>
 					</li>
@@ -526,6 +554,7 @@
 							<north>(2, 2)</north>
 							<south>(-2, -2)</south>
 							<east>(2, -2)</east>
+							<west>(-2, 2)</west>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -535,7 +564,7 @@
 						</uiRenderProperties>
 						
 						<gizmoLabel>Top Right Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<autoTargeting>true</autoTargeting>
 						
 						<key>topRightTurret</key>
 					</li>
@@ -546,6 +575,7 @@
 							<north>(-2, -2)</north>
 							<south>(2, 2)</south>
 							<east>(-2, 2)</east>
+							<west>(2, -2)</west>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -555,7 +585,7 @@
 						</uiRenderProperties>
 						
 						<gizmoLabel>Bottom Left Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<autoTargeting>true</autoTargeting>
 						
 						<key>bottomLeftTurret</key>
 					</li>
@@ -563,9 +593,10 @@
 						<turretDef>Colossus_PDTurret</turretDef>
 						
 						<renderProperties>
-							<north>(-2, 2)</north>
-							<south>(2, -2)</south>
+							<north>(2, -2)</north>
+							<south>(-2, 2)</south>
 							<east>(-2, -2)</east>
+							<west>(2, 2)</west>
 						</renderProperties>
 						
 						<uiRenderProperties>
@@ -575,22 +606,25 @@
 						</uiRenderProperties>
 						
 						<gizmoLabel>Bottom Right Turret</gizmoLabel>
-						<autoTargeting>false</autoTargeting>
+						<autoTargeting>true</autoTargeting>
 						
 						<key>bottomRightTurret</key>
 					</li>
 				</turrets>
 			</li>
 			<li Class="CompProperties_ProjectileInterceptor">
-				<radius>6</radius>
+				<radius>7.3</radius>
 				<interceptAirProjectiles>true</interceptAirProjectiles>
 				<interceptGroundProjectiles>true</interceptGroundProjectiles>
 				<interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
-				<color>(0.6, 0.2, 0.6)</color>
-				<reactivateEffect>MortarShieldGenerator_Reactivate</reactivateEffect>
-				<activeSound>MortarShield_Ambience</activeSound>
-				<hitPoints>3000</hitPoints>
-				<disarmedByEmpForTicks>1000</disarmedByEmpForTicks>
+				<color>(0.4, 0.2, 0.4)</color>
+				<reactivateEffect>PSV_Shield_Reactivate_Effect</reactivateEffect>
+				<activeSound>PSV_ShieldActive</activeSound>
+				<hitPoints>2500</hitPoints>
+				<interceptEffect>Interceptor_BlockedProjectile</interceptEffect>
+				<drawWithNoSelection>True</drawWithNoSelection>
+				<disarmedByEmpForTicks>1500</disarmedByEmpForTicks>
+				<gizmoTipKey>ProjectileInterceptorTip</gizmoTipKey>
 			  </li>
 		</comps>
 	</Vehicles.VehicleDef>

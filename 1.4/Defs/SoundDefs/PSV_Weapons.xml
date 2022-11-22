@@ -98,7 +98,7 @@
   <SoundDef>
     <defName>PSV_ColossusGeckoSound</defName>  
     <context>MapOnly</context>  
-    <maxSimultaneous>2</maxSimultaneous>  
+    <maxSimultaneous>3</maxSimultaneous>  
     <subSounds>
       <li>
         <grains>
@@ -106,12 +106,46 @@
             <clipPath>Colossus_Gecko_01</clipPath>
           </li>
           <li Class="AudioGrain_Clip">
-            <clipPath>Colossus_Gecko_01</clipPath>
+            <clipPath>Colossus_Gecko_02</clipPath>
           </li>
           <li Class="AudioGrain_Clip">
-            <clipPath>Colossus_Gecko_01</clipPath>
+            <clipPath>Colossus_Gecko_03</clipPath>
           </li>
         </grains>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>PSV_Deploy</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>   
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_1</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_2</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_3</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_4</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_5</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_6</clipPath>
+          </li>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Deploy_7</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>20~30</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
